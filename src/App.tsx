@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'; 
 import axios from 'axios'; 
 
-import API from './constants/API'; 
+import API from './constants/API';  
 
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';  
 
 const API_DETAILS = new API();
 
