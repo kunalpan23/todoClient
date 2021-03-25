@@ -3,7 +3,11 @@ import axios from 'axios';
 
 import API from './constants/API';  
 
+import { DeleteOutlined, EditOutlined } from '@material-ui/icons';
+
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';  
+
+
 
 const API_DETAILS = new API();
 
@@ -110,8 +114,12 @@ function App() {
                       </div>
                       <div className="label-text">{item.label}</div>
                       <div className="label-options">
-                        <span className="label-edit" onClick={() => updateTodoHandler({type: "EDIT", payload: item})}>✏️</span>{/* TODO edit */}
-                        <span className="label-delete" onClick={() => removeTodoHandler(item)}>🗑️</span>
+                        <span className="label-edit" onClick={() => updateTodoHandler({type: "EDIT", payload: item})}>
+                          <EditOutlined />  
+                        </span>{/* TODO edit */}
+                        <span className="label-delete" onClick={() => removeTodoHandler(item)}>
+                          <DeleteOutlined />
+                        </span>
                       </div>
                     </div>
                   </li>

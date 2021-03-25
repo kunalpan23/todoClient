@@ -86,12 +86,23 @@ html,body,#root{
     }
 
     .body{
-        margin: 10px 10px 100px 10px;
+        margin-top: 10px; 
         overflow:hidden;
         flex: 1;
         display:flex;
         flex-direction: column;
+        position:relative;
 
+        &:after{
+            position: absolute;
+            content: '';
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 100px;
+            display: block;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(230 ,230 ,236 , .48) 10%, #e6e6ec 100%)
+        }
 
         .heading{
             h1{
@@ -108,8 +119,11 @@ html,body,#root{
 
             flex:1;
             overflow-y:auto;
+            padding-bottom: 100px;
 
             & .todo-list{
+                padding: 10px;
+
                 & > li{
                     display: flex;
                     padding: 15px;
@@ -117,6 +131,11 @@ html,body,#root{
                     border-radius: 10px;
                     background: #fff;
                     margin-bottom: 10px;
+                    transition: ease all 240ms;
+
+                    &:hover{
+                        box-shadow:0 0 10px 0 rgba(0,0,0,0.3) ;
+                    }
 
                     &.checked{
                         text-decoration: strikethrough;
@@ -148,7 +167,12 @@ html,body,#root{
                             position: relative;
                             display: flex;
                             justify-content:center; 
+                            transition:ease all 240ms;
                             
+                            &:hover{
+                                background: #dbdbdb;
+                            }
+
                             &:after{
                                 content: '';
                                 position: absolute;
@@ -204,6 +228,12 @@ html,body,#root{
                             & > span{
                                 cursor: pointer;
                                 margin: 0 5px;
+                                color:#e6e6ec ;
+                                transition:ease all 240ms;
+
+                                &:hover{
+                                    color: #dbdbdb;
+                                }
                             }
                         }
                     }
